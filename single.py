@@ -78,6 +78,15 @@ class LinkedList(object):
             print(current.next_node.data) if hasattr(current.nex_node,"data") else None
             current = current.next_node
             
+    def deleteAll(self):
+        current = self.head
+        if current is None:
+            print('Tidak ada data')
+        while current:
+            self.head = current.get_next()
+            current = None
+            current = self.head
+            
     def menu(self):
         pilih = 'y'
         while (pilih =='y'):
@@ -87,6 +96,7 @@ class LinkedList(object):
             print('3. Search Data')
             print('4. Size Data')
             print('5. Show Data')
+            print('6. ')
             inp = str(input('Masukkan pilihan: '))
             if(inp == '1'):
                 obj = str(input('Masukkan angka yang ingin ditambahkan:'))
